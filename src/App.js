@@ -1,12 +1,21 @@
-import React from 'react';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import getGifs from  "./services/getGifs";
 
 function App() {
+  const [gifs, setGifs] = useState([]);
+
+  useEffect(()=> {
+    getGifs({keyword:'rick'}).then(gifs=>setGifs(gifs));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-content">
-      
-      </header>
+      <section className="App-content">
+        {gifs.map((singleGif) => (
+          <img src={singleGif} />
+        ))}
+      </section>
     </div>
   );
 }
