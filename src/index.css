@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root{
+  --results-column:2;
+}
+.ListOfGif{
+  column-count: var(--results-column);
+  column-gap:.5rem;
+}
+
+.ListOfGif-item{
+  page-break-inside: avoid;
+  break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+}

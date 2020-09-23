@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ListOfGif from "../components/ListOfGif";
+import Loading from "../components/Loading";
 import getGifs from "../services/getGifs";
 
 export default function Search({ params }) {
@@ -14,5 +15,5 @@ export default function Search({ params }) {
     });
   }, [keyword]);
 
-  return (<>{loading ? <h1>Cargando</h1> : <ListOfGif gifs={gifs} />}</>);
+  return (<>{loading ? <Loading/> : <ListOfGif gifs={gifs} />}</>);
 }
